@@ -24,11 +24,11 @@ describe("[Challenge] Side entrance", function () {
     /** CODE YOUR EXPLOIT HERE */
 
     // deploy attact contract
-    const SideEntranceAttrackerFactory = await ethers.getContractFactory("SideEntranceAttracker");
-    const attrackerContract = await SideEntranceAttrackerFactory.deploy();
+    const SideEntranceAttackerFactory = await ethers.getContractFactory("SideEntranceAttacker");
+    const attackerContract = await SideEntranceAttackerFactory.deploy();
 
     // attact
-    await attrackerContract.connect(attacker).attact(this.pool.address, ETHER_IN_POOL);
+    await attackerContract.connect(attacker).attact(this.pool.address, ETHER_IN_POOL);
   });
 
   after(async function () {
